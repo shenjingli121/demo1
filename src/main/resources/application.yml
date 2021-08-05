@@ -1,0 +1,33 @@
+#服务器端口
+server:
+  port: 12345
+#数据源配置
+spring:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver  #5.7用这个com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.64.129:3306/demo1?characterEncoding=UTF-8&serverTimezone=UTC
+      # characterEncoding 表示项目和数据库的数据传输方式用utf-8
+      # serverTimezone 设置时间为UTC 如果不设置查出来的时间会早8个小时
+      username: root
+      password: 123456
+#以下配置好像会被覆盖在这配置没用。
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true # 是否把date转换成timestamps
+# mybatis-plus配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true # 该配置是开启驼峰命名规则
+    auto-mapping-behavior: full
+    #NONE：取消自动映射PARTIAL:只会自动映射，没有定义嵌套结果集映射的结果集FULL:会自动映射任意复杂的结果集（无论是否嵌套)
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 0  #表示未删除 需要在实体类中搭配@TableLogic使用
+      # 删除后
+      logic-delete-value: 1  # 表示删除
