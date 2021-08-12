@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.demo.demo1.entity.TestOneEntity;
 import com.demo.demo1.mapper.TestOneMapper;
 import com.demo.demo1.service.TestOneService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,9 +19,18 @@ public class TestOneServiceImpl extends ServiceImpl<TestOneMapper, TestOneEntity
 
     }
 
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Override
     public List<TestOneEntity> getList() {
+//        redisTemplate.opsForValue().set("test", "11111");
+//        String test = redisTemplate.opsForValue().get("test").toString();
+        redisTemplate.delete("test");
+        String test2 = redisTemplate.opsForValue().get("test").toString();
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>"+test2);
+
+
         TestOneMapper mapper = this.getMapper();
         QueryWrapper<TestOneEntity> testOneEntityQueryWrapper = new QueryWrapper<>();
         List<TestOneEntity> testOneEntities = mapper.selectList(testOneEntityQueryWrapper);
