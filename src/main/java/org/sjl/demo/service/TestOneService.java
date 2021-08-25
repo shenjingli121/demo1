@@ -1,6 +1,6 @@
-package org.sjl.service;
+package org.sjl.demo.service;
 
-import org.sjl.entity.TestOneEntity;
+import org.sjl.demo.entity.TestOneEntity;
 
 import java.util.List;
 

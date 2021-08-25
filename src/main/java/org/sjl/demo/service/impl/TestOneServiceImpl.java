@@ -1,10 +1,10 @@
-package org.sjl.service.impl;
+package org.sjl.demo.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.sjl.entity.TestOneEntity;
-import org.sjl.mapper.TestOneMapper;
-import org.sjl.service.TestOneService;
+import org.sjl.demo.entity.TestOneEntity;
+import org.sjl.demo.mapper.TestOneMapper;
+import org.sjl.demo.service.TestOneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

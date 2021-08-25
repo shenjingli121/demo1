@@ -1,4 +1,4 @@
-package org.sjl.entity;
+package org.sjl.demo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -6,14 +6,16 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.sjl.base.entity.BaseEntity;
 
-@EqualsAndHashCode(callSuper = true)
+
+@TableName("test_one")
 @Data
 @ToString(callSuper = true)
-@TableName("sys_user")
-public class SysUser extends BaseEntity {
+@EqualsAndHashCode(callSuper = true)
+public class TestOneEntity extends BaseEntity {
 
-  private String name;
-  private String userName;
-  private String password;
+
+    private String asd;
+    private String adssd;
+
 
 }

@@ -1,8 +1,8 @@
-package org.sjl.controller;
+package org.sjl.demo.controller;
 
 import org.sjl.base.entity.HttpEntity;
-import org.sjl.entity.TestOneEntity;
-import org.sjl.service.TestOneService;
+import org.sjl.demo.entity.TestOneEntity;
+import org.sjl.demo.service.TestOneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
