@@ -1,4 +1,4 @@
-package com.demo.demo1;
+package org.sjl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
