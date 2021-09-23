@@ -48,3 +48,9 @@ mybatis-plus:
       logic-not-delete-value: 0  #表示未删除 需要在实体类中搭配@TableLogic使用
       # 删除后
       logic-delete-value: 1  # 表示删除
+
+
+rsa:
+  sjl:
+    key: SJL
+    size: 2048
