@@ -54,3 +54,5 @@ rsa:
   sjl:
     key: SJL
     size: 2048
+token:
+  timeout: 20
